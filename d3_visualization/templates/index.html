@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive Scatter Plot</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
+    <script src="https://d3js.org/d3-scale.v3.min.js"></script>
+    <script src="https://d3js.org/d3-array.v3.min.js"></script>
+    <script src="https://d3js.org/d3-axis.v3.min.js"></script>
+    <script src="https://d3js.org/d3-zoom.v2.min.js"></script>
+    <style>
+        /* Add CSS styles for the plot container */
+        #scatter-plot {
+            width: 100%;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+        
+        /* Tooltip styles */
+        #tooltip {
+            position: absolute;
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        #tooltip.hidden {
+            display: none;
+        }
+
+        /* Styles for the review plot container */
+        #review-plot-container {
+            width: 100%;
+            height: 500px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+
+        /* Review Tooltip styles */
+        #review-tooltip {
+            position: absolute;
+            text-align: center;
+            background: #333;
+            color: white;
+            padding: 5px;
+            font-size: 12px;
+            border-radius: 5px;
+            pointer-events: none;
+        }
+
+        #review-tooltip.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Interactive Feature Scatter Plot</h1>
+    <div id="scatter-plot"></div>
+
+    <!-- Tooltip div -->
+    <div id="tooltip" class="hidden">
+        <p><span id="value"></span></p>
+    </div>
+
+    <h1>Interactive Review Scatter Plot</h1>
+    <!-- Container for the review scatter plot -->
+    <div id="review-plot-container"></div>
+
+    <!-- Review Tooltip div -->
+    <div id="review-tooltip" class="hidden">
+        <p><span id="review-value"></span></p>
+    </div>
+
+    <script src="{{ url_for('static', filename='scripts/plot.js') }}"></script>
+</body>
+</html>
